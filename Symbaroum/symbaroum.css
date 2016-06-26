@@ -1,13 +1,13 @@
 /*** Background ***/
-
+/*
 .sheet-row >div{
      display:inline-block;
  }
 .sheet-row {
-	padding:0 30px 10px 30px;   
+    padding:0 30px 10px 30px;   
 }
 .sheet-2colrow >.sheet-col{
-	margin:10px !important;   
+    margin:10px !important;   
 }
 /*** Font ***/
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -28,6 +28,10 @@
   color:    #fafafa;
 }
 /*** Pages ***/
+.sheet-col>div {
+	padding-top:3px;
+}
+
 div[class^="sheet-section"] {
 	visibility: hidden;
 	opacity: 0;
@@ -44,9 +48,8 @@ input.sheet-tab99:checked ~ div[class^="sheet-section"] {
 .sheet-row div[class^="repcontrol"]{
     padding:1em;   
 }
-
 input.sheet-tab {
-	width: 175px;
+	width: 100px;
 	height: 23px;
 	cursor: pointer;
 	position: relative;
@@ -58,11 +61,11 @@ span.sheet-tab {
 	text-align: center;
 	display: inline-block;
 	padding-left, padding-right: 3px;
-	width: 175px;
+	width: 100px;
 	height: 23px;
 	cursor: pointer;
 	position: relative;
-	margin-left: -184px;
+	margin-left: -109px;
 	margin-top: 0px;
 	color: #FAFAFA;
 	border-radius: 5px 5px 0px 0px;
@@ -87,7 +90,8 @@ input.sheet-tab:checked::before {
 input.sheet-tab1:checked ~ div.sheet-section-pc1,
 input.sheet-tab2:checked ~ div.sheet-section-pc2,
 input.sheet-tab3:checked ~ div.sheet-section-pc3,
-input.sheet-tab4:checked ~ div.sheet-section-pc4{
+input.sheet-tab4:checked ~ div.sheet-section-pc4,
+input.sheet-tab5:checked ~ div.sheet-section-pc5{
 	max-height: 999999px;
     max-width:850px;
 	visibility: visible;
@@ -100,7 +104,8 @@ input.sheet-tab4:checked ~ div.sheet-section-pc4{
 input.sheet-tab1:checked + span.sheet-tab1,
 input.sheet-tab2:checked + span.sheet-tab2,
 input.sheet-tab3:checked + span.sheet-tab3,
-input.sheet-tab4:checked + span.sheet-tab4{
+input.sheet-tab4:checked + span.sheet-tab4,
+input.sheet-tab5:checked + span.sheet-tab5{
 	box-shadow: -2px -2px 5px #FAFAFA inset, 2px 2px 5px #202020 inset;
 	opacity: 1;
 }
@@ -114,8 +119,6 @@ input.sheet-tab4:checked + span.sheet-tab4{
 	margin: 0; 
 }
 label { 
-    margin: 0;
-	padding:0;
 	text-align: left;
 	font-size: 1em;
 	font-weight: normal;
@@ -125,16 +128,13 @@ select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	width:auto;
-	height:2em;
-	display: inline-block;
+	height:auto;
 	text-overflow: '';
 	background: #FBFCFC;
-	border-radius:6px;
-	border: 3px solid #004040;
-	padding:0;
-	margin: 0;
-	text-align: center;
-	line-height:1em;
+	border-radius:2px;
+	line-height:16px;
+	margin-bottom:0px !important;
+	padding:4px;
 }
 select > option {
 	text-align:center;
@@ -143,14 +143,8 @@ input[type=radio]{
 	margin:0 5px 0 5px;   
 }
 input[type="number"].sheet-number-circle{
-    -moz-appearance: none;
-    text-indent: 0.01px;
-    text-overflow: '';
-	font-size:1.25em;
-	border: 3px solid #004040;
-	padding:0 .5em 0 .5em;
-	width:2.33em;
-	height:2.33em;
+	width:2em;
+	height:2em;
 	text-align: center;
 	vertical-align:center;
 	border-radius:3em;
@@ -158,69 +152,70 @@ input[type="number"].sheet-number-circle{
 	background: #FBFCFC;
 }
 input[type="number"].sheet-number-box-small{
-	border: 3px solid #004040;
-	padding:0 0 0 3px;
-	display: inline;
-	width:3.1em;
-	height:2em;
-	text-align: left;
-	vertical-align:middle;
-	border-radius:6px;
+	
 }
 input[type="number"]:disabled{
-	background: #aaaaaa;
 }
 input[type="text"]{
-	height:2em;
-	border: 3px solid #004040;
-	text-align: left;
-	background: #FBFCFC;
-	border-radius:6px;
-	font-size: 13px;
-	font-style:bold;
-	width:195px;
 }
 input[type="checkbox"] {
-	border: 3px solid #004040;
+	
 	color: #000000;
 	background: #FBFCFC;
-	border-radius:6px;
+	border-radius:2px;
 	font-size: 12px;
     box-shadow: 1px 1px 2px #000101, -1px -1px 2px #000101,1px -1px 2px #000101, -1px 1px 2px #000101;
 }
 textarea {
-	padding:3px;
 	box-sizing: border-box;
-	margin:0;
+	padding:3px;
 	resize: vertical;
 	overflow:hidden;
 	display: block;
 	text-align: left;
-	border: 3px solid #004040;
+	
 	color: #000000;
 	background: #FBFCFC;
-	border-radius:6px;
+	border-radius:2px;
 	height:6.3em;
 	width:100%
 }
 input[name^="attr_friend"] {
  width:48%;   
 }
-.sheet-table fieldset,
-.sheet-table {
-    display:table;   
-    text-align:center;
+fieldset>div{
+    padding:3px;
 }
+
+
+.sheet-table {
+    display:table;  
+}
+
+.sheet-table-row{
+	display:table-row;
+	width:100%;
+}
+
+div.sheet-table-row ~ span,
+.sheet-table-cell{
+	display:table-cell;
+	text-align:center;
+}
+
+/*
 .sheet-table >fieldset,
 .sheet-table >div{
     display:table-row;
-    width:75px;
+	width:100%;
 }
 .sheet-table fieldset >div,
 .sheet-table >div >div {
     display:table-cell;   
     vertical-align:bottom;
 }
+
+*/
 .sheet-table label {
     text-align:center;   
 }
@@ -247,6 +242,8 @@ button {
 	font-style:bold;
 }
     
+div{background:rgba(0,0,0,0.25);}
+
 
 .sheet-rolltemplate-defense table {
 	font-family: "Georgia";
@@ -282,14 +279,14 @@ button {
 [class^="sheet-faded"]{
     background-color:rgba(0,0,0,.3);   
     display:inline;
-    border-radius:1em  1em 0 0 ;
+    border-radius:1em 1em 0 0 ;
 }
 .sheet-faded-nam {
     vertical-align:middle;
     width:76px;
     padding:4px;
 }
-.sheet-faded-nam >div{
+.sheet-faded-nam > div{
     display:inline-block;
     width:32%;   
 }
@@ -297,21 +294,23 @@ button {
     vertical-align:middle;
     padding:4px;    
 }
-.sheet-label-row div,
-.sheet-label-row label {
+.sheet-label-row div{
     display:inline-block;   
 }
 .sheet-label-row div > span{
-    margin-right:6px;   
 }
 .sheet-label-large {
-    padding:0;
     font-size:1.5em;
-    margin:0px 0px .5em 0px;
 }
-.sheet-row-with-labels div{
+
+.sheet-row-with-labels{
+}
+.sheet-row-with-labels > div{
  display:inline-block; 
- vertical-align:bottom;
+ vertical-align:middle;
+}
+.sheet-row-with-labels button{
+	vertical-align:middle;
 }
 .sheet-row-with-labels label{
  text-align:center;
@@ -321,13 +320,13 @@ button {
     display:inline-block;  
     padding:4px 4px 0 4px;
 }
-
+/*
 .sheet-attributes{
  display:inline-block;
  width:100%;
  vertical-align:top;
  height:80px;
- border-radius:6px;
+ border-radius:2px;
  text-align:center;   
 }
 .sheet-attributes >div{
@@ -344,7 +343,6 @@ button {
 	margin-bottom: 10px;   
 	margin-bottom: -2em;
     box-shadow: 3px 3px 2px #aaaaaa inset,-3px -3px 1px #103030 inset;
-    /*box-shadow: none|h-shadow v-shadow blur spread color |inset|initial|inherit;*/
 }
 .sheet-attributes span {
 	font-size:.75em;
@@ -361,7 +359,7 @@ button {
 	opacity:0;
 	z-index:9999;
 }
+*/
 .charsheet * {
-    box-sizing: border-box;
 	font-family: "Georgia"; 
 }
