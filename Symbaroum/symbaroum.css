@@ -1,14 +1,8 @@
 /*** Background ***/
-/*
-.sheet-row >div{
-     display:inline-block;
- }
-.sheet-row {
-    padding:0 30px 10px 30px;   
-}
-.sheet-2colrow >.sheet-col{
-    margin:10px !important;   
-}
+
+
+
+
 /*** Font ***/
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    #fafafa;
@@ -27,10 +21,8 @@
 :placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
   color:    #fafafa;
 }
+
 /*** Pages ***/
-.sheet-col>div {
-	padding-top:3px;
-}
 
 div[class^="sheet-section"] {
 	visibility: hidden;
@@ -46,7 +38,6 @@ input.sheet-tab99:checked ~ div[class^="sheet-section"] {
 	
 }
 .sheet-row div[class^="repcontrol"]{
-    padding:1em;   
 }
 input.sheet-tab {
 	width: 100px;
@@ -110,13 +101,17 @@ input.sheet-tab5:checked + span.sheet-tab5{
 	opacity: 1;
 }
 
+/* 
+.sheet-hideable {
+	visibility: hidden;
+	opacity: 0;
+	max-height:0;
+	overflow: hidden;
+}
+*/
 /*** Input ***/
 .sheet-number-circle::-webkit-inner-spin-button, 
 .sheet-number-circle::-webkit-outer-spin-button { 
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	margin: 0; 
 }
 label { 
 	text-align: left;
@@ -131,28 +126,27 @@ select {
 	height:auto;
 	text-overflow: '';
 	background: #FBFCFC;
-	border-radius:2px;
-	line-height:16px;
-	margin-bottom:0px !important;
-	padding:4px;
+	-webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: content-box;    /* Firefox, other Gecko */
+	box-sizing: content-box;         /* Opera/IE 8+ */
+	padding:0px 4px 0px 4px;
+	margin:0;
+	border:0;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 }
 select > option {
-	text-align:center;
 }
 input[type=radio]{
 	margin:0 5px 0 5px;   
 }
-input[type="number"].sheet-number-circle{
-	width:2em;
-	height:2em;
-	text-align: center;
-	vertical-align:center;
-	border-radius:3em;
-	color: #000000;
-	background: #FBFCFC;
+input[type="number"]{
+	min-width:2em;
+	max-width:5em;
+	text-align:right;
 }
 input[type="number"].sheet-number-box-small{
-	
+	vertical-align:middle;
 }
 input[type="number"]:disabled{
 }
@@ -162,69 +156,72 @@ input[type="checkbox"] {
 	
 	color: #000000;
 	background: #FBFCFC;
-	border-radius:2px;
-	font-size: 12px;
     box-shadow: 1px 1px 2px #000101, -1px -1px 2px #000101,1px -1px 2px #000101, -1px 1px 2px #000101;
 }
 textarea {
 	box-sizing: border-box;
-	padding:3px;
+	padding:4px;
 	resize: vertical;
 	overflow:hidden;
 	display: block;
 	text-align: left;
-	
 	color: #000000;
 	background: #FBFCFC;
-	border-radius:2px;
-	height:6.3em;
-	width:100%
+	width:100%;
+	height:2em;
+	margin:0px;
 }
-input[name^="attr_friend"] {
- width:48%;   
-}
-fieldset>div{
-    padding:3px;
+h1{
+	color:white;
+
 }
 
-
+/*** Table formatting ***/
 .sheet-table {
     display:table;  
+	padding:8px;
+	margin:6px;
+	background:rgba(0,0,0,0.55);
 }
 
-.sheet-table-row{
+.sheet-table-row {
 	display:table-row;
 	width:100%;
+	height:auto;
 }
 
-div.sheet-table-row ~ span,
 .sheet-table-cell{
+    text-align:center;  
 	display:table-cell;
-	text-align:center;
+	vertical-align:middle;
+	height:100%;
 }
 
-/*
-.sheet-table >fieldset,
-.sheet-table >div{
-    display:table-row;
+.sheet-table-cell > input[type="text"]{
 	width:100%;
 }
-.sheet-table fieldset >div,
-.sheet-table >div >div {
-    display:table-cell;   
-    vertical-align:bottom;
+.repcontainer label,
+.sheet-table label {
+    text-align:left;
+	padding:0px;
+	padding-left:3px;
+	border:0px; 
+	margin:0px;
+	margin-top:-2px;
 }
 
-*/
-.sheet-table label {
-    text-align:center;   
+.repcontainer {
+	width:100%;
+	min-height:28px;
+	background:rgba(0,0,0,0.55);
+	padding:8px;
+	margin:6px;
 }
+
 /*** Buttons ***/
-button {
-    
-}
-[class="btn repcontrol_edit"]{
-}
+
+
+
 
 /*** Roll Templates ***/
 .sheet-rolltemplate-defense,
@@ -241,8 +238,7 @@ button {
 	text-align:center;
 	font-style:bold;
 }
-    
-div{background:rgba(0,0,0,0.25);}
+  
 
 
 .sheet-rolltemplate-defense table {
@@ -299,7 +295,7 @@ div{background:rgba(0,0,0,0.25);}
 }
 .sheet-label-row div > span{
 }
-.sheet-label-large {
+h1 {
     font-size:1.5em;
 }
 
@@ -362,4 +358,5 @@ div{background:rgba(0,0,0,0.25);}
 */
 .charsheet * {
 	font-family: "Georgia"; 
+	/*line-height:10px;*/
 }
