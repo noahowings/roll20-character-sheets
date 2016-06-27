@@ -84,7 +84,6 @@ input.sheet-tab3:checked ~ div.sheet-section-pc3,
 input.sheet-tab4:checked ~ div.sheet-section-pc4,
 input.sheet-tab5:checked ~ div.sheet-section-pc5{
 	max-height: 999999px;
-    max-width:850px;
 	visibility: visible;
 	min-height:1000px;
 	opacity: 1;
@@ -123,7 +122,7 @@ select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	width:auto;
-	height:auto;
+	height:2em;
 	text-overflow: '';
 	background: #FBFCFC;
 	-webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
@@ -152,8 +151,7 @@ input[type="number"]:disabled{
 }
 input[type="text"]{
 	height:2em;
-	min-width:5em;
-	max-width:15em;
+	overflow:visible;
 }
 input[type="checkbox"] {
 	
@@ -161,6 +159,7 @@ input[type="checkbox"] {
 	background: #FBFCFC;
     box-shadow: 1px 1px 2px #000101, -1px -1px 2px #000101,1px -1px 2px #000101, -1px 1px 2px #000101;
 }
+
 textarea {
 	box-sizing: border-box;
 	padding:4px;
@@ -174,6 +173,10 @@ textarea {
 	height:2em;
 	margin:0px;
 }
+textarea.sheet-fill {
+	resize:horizontal;
+	
+}
 h1{
 	color:white;
 }
@@ -185,11 +188,18 @@ h1{
 	margin:6px;
 	background:rgba(0,0,0,0.55);
 }
-
+.sheet-table>.sheet-table{
+	padding:0;
+	margin:0;
+}
 .sheet-table-row {
 	display:table-row;
 	width:100%;
 	height:auto;
+}
+
+.sheet-table-row > .sheet-table-row {
+	width:100%;
 }
 .sheet-fill{
 	width:100%;
@@ -216,9 +226,13 @@ h1{
 	margin-top:-2px;
 	font-size:.9em;
 }
+.repitem > span {
+	margin-top:0px;
+	margin-bottom:0px;
 
+}
 .repcontainer {
-	width:100%;
+	/*width:100%;*/
 	min-height:28px;
 	background:rgba(0,0,0,0.55);
 	padding:8px;
@@ -269,7 +283,7 @@ h1{
 }
 .charsheet {
     background-color:#000303 ;
-    background-image:url("http://i.imgur.com/XOomnMY.jpg?1");
+    background-image:url("http://i.imgur.com/XOomnMY.jpg?1"); 
     background-repeat: no-repeat;
 	background-position: 0px 33px; 
 	text-shadow: 1px 1px 2px #000101, -1px -1px 2px #000101,1px -1px 2px #000101, -1px 1px 2px #000101,
@@ -367,6 +381,7 @@ label.sheet-table-header {
 	font-size:1.2em;
 }
 .charsheet * {
+    max-width:850px;
 	font-family: "Georgia"; 
 	/*line-height:10px;*/
 }

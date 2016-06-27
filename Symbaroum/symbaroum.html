@@ -1,15 +1,18 @@
 <script type="text/worker">
 
-on("change:strong", function() {
-   getAttrs(["strong"], function(values) {
+on("change:strong change:strong_temp", function(eventinfo) {
+   getAttrs(["strong", "strong_temp"], function(values) {
       setAttrs({
-          toughness_total: Math.max(values.strong,10),
-          pain_threshold: Math.ceil(values.strong/2)
+          toughness_total: Math.max(values.strong+values.strong_temp,10),
+          pain_threshold: Math.ceil(values.strong+values.strong_temp)/2
       });
    });
 });
 
-</script><!--
+</script>
+
+
+<!--
 *********TODO*********
 Add custom ability names
 New Roll Template styles
@@ -29,14 +32,12 @@ Attributes as repeating sections?
 <input type="radio" name="attr_page-number" class="sheet-tab sheet-tab1" value="1" title="Character Sheet" checked="checked"/>
 <span class="sheet-tab sheet-tab1">Character</span>
 <input type="radio" name="attr_page-number" class="sheet-tab sheet-tab2" value="2" title="Traits and Abilities"/>
-<span class="sheet-tab sheet-tab2">Traits | Abilities</span>
-<input type="radio" name="attr_page-number" class="sheet-tab sheet-tab3" value="3" title="Rituals and Powers"/>
-<span class="sheet-tab sheet-tab3">Rituals | Powers</span>
-<input type="radio" name="attr_page-number" class="sheet-tab sheet-tab4" value="4" title="Equipment, Group, and Friends"/>
-<span class="sheet-tab sheet-tab4">Equipment | Bio</span>
-<input type="radio" name="attr_page-number" class="sheet-tab sheet-tab5" value="5" title="Options"/>
-<span class="sheet-tab sheet-tab5">Options</span>
-<div class="sheet-table">
+<span class="sheet-tab sheet-tab2">Abilities</span>
+<input type="radio" name="attr_page-number" class="sheet-tab sheet-tab3" value="3" title="Equipment"/>
+<span class="sheet-tab sheet-tab3">Equipment</span>
+<input type="radio" name="attr_page-number" class="sheet-tab sheet-tab4" value="4" title="Options"/>
+<span class="sheet-tab sheet-tab4">Options</span>
+<div class="sheet-table" style="text-align:center;padding-bottom:0px;margin-bottom:-1px;">
 	<div class="sheet-table-row">
 		<span class="sheet-table-cell"><input type="text" name="attr_character-name" /><label>Name</label></span>
 		<span class="sheet-table-cell"><input type="text" name="attr_character-race" /><label>Race</label></span>
@@ -45,8 +46,50 @@ Attributes as repeating sections?
 		<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" style="width:4em;" name="attr_character-exp"/><label>Exp</label></span>
 		<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" style="width:4em;"  name="attr_character-expu"/><label>Unused</label></span>
 	</div>
-	<div class="sheet-table-row">
-		
+</div>
+<div class="sheet-row sheet-table" style="background:rgba(1,1,1,0);margin:-6px 0px 0px 0px;padding:0;text-align:center;">
+	<div class="sheet-table-row" style="box-sizing:content-box;">
+		<div class="sheet-table-cell" style="vertical-align:top;">
+			<div class="sheet-table">
+				<div class="sheet-table-row">
+					<span class="sheet-table-cell"><label class="sheet-table-header">Toughness</label></span>
+				</div>
+				<div class="sheet-table-row">
+					<div class="sheet-table-row">
+						<span class="sheet-table-cell"> <input type="number" class="sheet-number-box-small" name="attr_toughness" /></span>
+						<span class="sheet-table-cell"> <input type="number" class="sheet-number-box-small" name="attr_toughness_total"/></span>
+						<span class="sheet-table-cell"> <input type="number" class="sheet-number-box-small" name="attr_pain_threshold"/></span>
+					</div>
+					<div class="sheet-table-row">
+						<span class="sheet-table-cell"><label>current</label></span>
+						<span class="sheet-table-cell"><label>max</label></span>
+						<span class="sheet-table-cell"><label>thresh</label></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sheet-table-cell" style="width:100%;vertical-align:top;">
+			<textarea name="attr_character-quote" style="height:2em;width:100%;background:rgba(1,1,1,0);border:none;color:#fafafa;font-size:1.5em;padding:.5em;font-style:italic;text-align:center;text-shadow: 1px 1px 2px #000101, -1px -1px 2px #000101,1px -1px 2px #000101, -1px 1px 2px #000101, 1px 1px 12px #000101, -1px -1px 12px #000101,1px -1px 12px #000101, -1px 1px 12px #000101;" placeholder="Character quote"></textarea>
+		</div>
+		<div class="sheet-table-cell" style="vertical-align:top;text-align:right;">
+			<div class="sheet-table">
+				<div class="sheet-table-row">	
+					<span class="sheet-table-cell"><label class="sheet-table-header">Corruption</label> </span>
+				</div>
+				<div class="sheet-table-row">
+					<div class="sheet-table-row">
+							<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small"  style="vertical-align:middle"name="attr_corruption" min="0" value="0"/></span>
+							<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small"  style="vertical-align:middle"name="attr_corruption_permanent" min="0" value="0"/></span>
+							<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small"  style="vertical-align:middle" name="attr_corruption_threshold" value="ceil(@{resolute}/2)" disabled="true" /></span>
+					</div>
+					<div class="sheet-table-row">
+						<span class="sheet-table-cell"><label>temp</label></span>
+						<span class="sheet-table-cell"><label>perm</label></span>
+						<span class="sheet-table-cell"><label>thresh</label></span>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -57,42 +100,6 @@ Attributes as repeating sections?
 			<div class="sheet-hideable">
 				<h1>Attributes</h1>
 				<input type="checkbox" name="attr_attributes-options-flag" checked="checked"/>		
-			</div>
-			<div class="sheet-row" > <!-- Begin toughness/corruption -->
-				<div class="sheet-table" style="display:inline-block;">
-					<div class="sheet-table-row">
-						<span class="sheet-table-cell"><label class="sheet-table-header">Toughness</label></span>
-					</div>
-					<div class="sheet-table-row">
-						<div class="sheet-table-row">
-							<span class="sheet-table-cell"> <input type="number" class="sheet-number-box-small" name="attr_toughness" /></span>
-								<span class="sheet-table-cell"> <input type="number" class="sheet-number-box-small" name="attr_toughness_total"/></span>
-								<span class="sheet-table-cell"> <input type="number" class="sheet-number-box-small" name="attr_pain_threshold"/></span>
-						</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-cell"><label>current</label></span>
-							<span class="sheet-table-cell"><label>max</label></span>
-							<span class="sheet-table-cell"><label>thresh</label></span>
-						</div>
-					</div>
-				</div>
-				<div class="sheet-table"  style="display:inline-block">
-						<div class="sheet-table-row">	
-							<span class="sheet-table-cell"><label class="sheet-table-header">Corruption</label> </span>
-						</div>
-						<div class="sheet-table-row">
-							<div class="sheet-table-row">
-									<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small"  style="vertical-align:middle"name="attr_corruption" min="0" value="0"/></span>
-									<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small"  style="vertical-align:middle"name="attr_corruption_permanent" min="0" value="0"/></span>
-									<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small"  style="vertical-align:middle" name="attr_corruption_threshold" value="ceil(@{resolute}/2)" disabled="true" /></span>
-							</div>
-						<div class="sheet-table-row">
-							<span class="sheet-table-cell"><label>temp</label></span>
-							<span class="sheet-table-cell"><label>perm</label></span>
-							<span class="sheet-table-cell"><label>thresh</label></span>
-						</div>
-					</div>
-				</div>
 			</div>
 			<div class="sheet-table">
 				<div class="sheet-table-row">
@@ -111,131 +118,121 @@ Attributes as repeating sections?
 					<span class="sheet-table-cell"><button type='roll' value='/roll 1d20<[[@{Accurate}]] Accurate ' name='roll_AccurateCheck'></button></span>
 					<span class="sheet-table-cell"><input type="number" class="sheet-number-circle" value="10" name="attr_accurate" /></span>
 					<span class="sheet-table-cell">+</span>
-					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_accurate-temp" /> </span>
+					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_accurate_temp" /> </span>
 					<span class="sheet-table-cell">=</span>
-					<span class="sheet-table-cell"><input type="number" name="attr_accurate-total" disabled="disabled" value="[[@{accurate}+@{accurate-temp}]]"/></span>
+					<span class="sheet-table-cell"><input type="number" name="attr_accurate_total" disabled="disabled" value="[[@{accurate}+@{accurate_temp}]]"/></span>
 					<span class="sheet-table-cell"><input type="text" value="Accurate" name="attr_accurate-name" /></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{accurate-total}" name="attr_attack-attribute" checked="checked"/></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{accurate-total}"  name="attr_defense-attribute"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{accurate_total}" name="attr_attack-attribute" checked="checked"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{accurate_total}"  name="attr_defense-attribute"/></span>
 				</div>		
 				<div class="sheet-table-row">
 					<span class="sheet-table-cell"><button type='roll' class="sheet-hidden" value='/roll 1d20<[[@{Cunning}]] Cunning ' name='roll_CunningCheck'></button></span>
 					<span class="sheet-table-cell"><input type="number" class="sheet-number-circle" value="10" name="attr_cunning"/></span>
 					<span class="sheet-table-cell">+</span>
-					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_cunning-temp"/></span>
+					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_cunning_temp"/></span>
 					<span class="sheet-table-cell">=</span>
-					<span class="sheet-table-cell"><input type="number" name="attr_cunning-total" disabled="disabled" value="[[@{cunning}+@{cunning-temp}]]"/></span>
+					<span class="sheet-table-cell"><input type="number" name="attr_cunning_total" disabled="disabled" value="[[@{cunning}+@{cunning_temp}]]"/></span>
 					<span class="sheet-table-cell"><input type="text" value="Cunning" name="attr_cunning-name" /></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{cunning-total}" name="attr_attack-attribute"/></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{cunning-total}" name="attr_defense-attribute"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{cunning_total}" name="attr_attack-attribute"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{cunning_total}" name="attr_defense-attribute"/></span>
 				</div>    
 				<div class="sheet-table-row">
 					<span class="sheet-table-cell"><button type='roll' class="sheet-hidden" value='/roll 1d20<[[@{Discreet}]] Discreet ' name='roll_DiscreetCheck'></button> </span>
 					<span class="sheet-table-cell"><input type="number" class="sheet-number-circle" value="10" name="attr_discreet"/></span>
 					<span class="sheet-table-cell">+</span>
-					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_discreet-temp"/></span>
+					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_discreet_temp"/></span>
 					<span class="sheet-table-cell">=</span>
-					<span class="sheet-table-cell"><input type="number" name="attr_discreet-total" disabled="disabled" value="[[@{discreet}+@{discreet-temp}]]"/></span>
+					<span class="sheet-table-cell"><input type="number" name="attr_discreet_total" disabled="disabled" value="[[@{discreet}+@{discreet_temp}]]"/></span>
 					<span class="sheet-table-cell"><input type="text"  value="Discreet" name="attr_discreet-name" /></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{discreet-total}" name="attr_attack-attribute"/></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{discreet-total}" name="attr_defense-attribute"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{discreet_total}" name="attr_attack-attribute"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{discreet_total}" name="attr_defense-attribute"/></span>
 				</div>   
 				<div class="sheet-table-row">
 					<span class="sheet-table-cell"><button type='roll' class="sheet-hidden" value='/roll 1d20<[[@{Persuasive}]] Persuasive ' name='roll_PersuasiveCheck'></button></span>
 					<span class="sheet-table-cell"><input type="number" class="sheet-number-circle" value="10" name="attr_persuasive"/></span>
 					<span class="sheet-table-cell">+</span>
-					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_persuasive-temp"/></span>
+					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_persuasive_temp"/></span>
 					<span class="sheet-table-cell">=</span>
-					<span class="sheet-table-cell"><input type="number" name="attr_persuasive-total" disabled="disabled" value="[[@{persuasive}+@{persuasive-temp}]]"/></span>
+					<span class="sheet-table-cell"><input type="number" name="attr_persuasive_total" disabled="disabled" value="[[@{persuasive}+@{persuasive_temp}]]"/></span>
 					<span class="sheet-table-cell"><input type="text"  value="Persuasive" name="attr_persuasive-name" /></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{persuasive-total}" name="attr_attack-attribute"/></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{persuasive-total}" name="attr_defense-attribute"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{persuasive_total}" name="attr_attack-attribute"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{persuasive_total}" name="attr_defense-attribute"/></span>
 				</div>
 				<div class="sheet-table-row">
 					<span class="sheet-table-cell"><button type='roll' class="sheet-hidden" value='/roll 1d20<[[@{Quick}]] Quick ' name='roll_QuickCheck'></button></span>
 					<span class="sheet-table-cell"><input type="number" class="sheet-number-circle" value="10" name="attr_quick"/></span>
 					<span class="sheet-table-cell">+</span>
-					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_quick-temp"/></span>
+					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_quick_temp"/></span>
 					<span class="sheet-table-cell">=</span>
-					<span class="sheet-table-cell"><input type="number" name="attr_quick-total" disabled="disabled" value="[[@{quick}+@{quick-temp}]]"/></span>
+					<span class="sheet-table-cell"><input type="number" name="attr_quick_total" disabled="disabled" value="[[@{quick}+@{quick_temp}]]"/></span>
 					<span class="sheet-table-cell"><input type="text"  value="Quick" name="attr_quick-name" /></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{quick-total}" name="attr_attack-attribute"/></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{quick-total}" name="attr_defense-attribute"  checked="checked"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{quick_total}" name="attr_attack-attribute"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{quick_total}" name="attr_defense-attribute"  checked="checked"/></span>
 				</div>  
 				<div class="sheet-table-row">
 					<span class="sheet-table-cell"><button type='roll' class="sheet-hidden" value='/roll 1d20<[[@{Resolute}]] Resolute ' name='roll_ResoluteCheck'></button> </span>
 					<span class="sheet-table-cell"><input type="number" class="sheet-number-circle" value="10" name="attr_resolute"/></span>
 					<span class="sheet-table-cell">+</span>
-					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_resolute-temp"/></span>
+					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_resolute_temp"/></span>
 					<span class="sheet-table-cell">=</span>
-					<span class="sheet-table-cell"><input type="number" name="attr_resolute-total" disabled="disabled" value="[[@{resolute}+@{resolute-temp}]]"/></span>
+					<span class="sheet-table-cell"><input type="number" name="attr_resolute_total" disabled="disabled" value="[[@{resolute}+@{resolute_temp}]]"/></span>
 					<span class="sheet-table-cell"><input type="text" value="Resolute" name="attr_resolute-name" /></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{resolute-total}" name="attr_attack-attribute"/></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{resolute-total}" name="attr_defense-attribute"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{resolute_total}" name="attr_attack-attribute"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{resolute_total}" name="attr_defense-attribute"/></span>
 				</div>  
 				<div class="sheet-table-row">
 					<span class="sheet-table-cell"><button type='roll' class="sheet-hidden" value='/roll 1d20<[[@{Strong}]] Strong ' name='roll_StrongCheck'></button></span>
 					<span class="sheet-table-cell"><input type="number" class="sheet-number-circle" value="10" name="attr_strong"/></span>
 					<span class="sheet-table-cell">+</span>
-					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_strong-temp"/></span>
+					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_strong_temp"/></span>
 					<span class="sheet-table-cell">=</span>
-					<span class="sheet-table-cell"><input type="number" name="attr_strong-total" disabled="disabled" value="[[@{strong}+@{strong-temp}]]"/></span>
-					<span class="sheet-table-cell"><input type="text"  value="Strong" name="attr_strong-name" /></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{strong-total}" name="attr_attack-attribute"/></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{strong-total}" name="attr_defense-attribute" /></span>
+					<span class="sheet-table-cell"><input type="number" name="attr_strong_total"  disabled="disabled"value="[[@{strong}+@{strong_temp}]]"/></span>
+					<span class="sheet-table-cell"><input type="text"  value="Strong" name="attr_strong-name"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{strong_total}" name="attr_attack-attribute"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{strong_total}" name="attr_defense-attribute" /></span>
 				</div>    
 				<div class="sheet-table-row">
 					<span class="sheet-table-cell"><button type='roll' class="sheet-hidden" value='/roll 1d20<[[@{Vigilant}]] Vigilant ' name='roll_VigilantCheck'></button></span>
 					<span class="sheet-table-cell"><input type="number" class="sheet-number-circle" value="10" name="attr_vigilant"/></span>
 					<span class="sheet-table-cell">+</span>
-					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_vigilant-temp"/></span>
+					<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" value="0" name="attr_vigilant_temp"/></span>
 					<span class="sheet-table-cell">=</span>
-					<span class="sheet-table-cell"><input type="number" name="attr_vigilant-total" disabled="disabled" value="[[@{vigilant}+@{vigilant-temp}]]"/></span>
+					<span class="sheet-table-cell"><input type="number" name="attr_vigilant_total" disabled="disabled" value="[[@{vigilant}+@{vigilant_temp}]]"/></span>
 					<span class="sheet-table-cell"><input type="text" value="Vigilant"  name="attr_vigilant-name" title="Vigilant attribute"/></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{vigilant-total}" name="attr_attack-attribute"/></span>
-					<span class="sheet-table-cell"><input type="radio" value="@{vigilant-total}" name="attr_defense-attribute"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{vigilant_total}" name="attr_attack-attribute"/></span>
+					<span class="sheet-table-cell"><input type="radio" value="@{vigilant_total}" name="attr_defense-attribute"/></span>
 				</div> 			
 			</div> <!-- END Attributes -->
 		</div>
 		<div class="sheet-col">
 			<h1>Background</h1>
-			<div class="sheet-table sheet-fill"> <!--- Quote -->
-				<div class="sheet-table-row sheet-fill" >
-					<span class="sheet-table-cell" style="vertical-align:top"><label style="font-size:3em;margin-top:.2em;">&ldquo;</label></span>
-					<span class="sheet-table-cell"><textarea name="attr_character-quote"style="height:2em;width:100%;background:rgba(1,1,1,0);border:none;color:#fafafa;font-size:1.5em;padding:.5em;font-style:italic;" placeholder="Quote"></textarea> </span>
-					<span class="sheet-table-cell" style="vertical-align:bottom"><label style="font-size:3em;">&rdquo;</label></span>
+			<div class="sheet-table sheet-fill">
+				<div class="sheet-table-row"> <!-- Group -->
+					<span class="sheet-table-cell"><label class="sheet-table-header">Group</label></span>	
+				</div>
+				<div class="sheet-table-row">
+					<span class="sheet-table-cell"><input type="text" name="attr_groupName" placeholder="Group Name"/></span>
+					<span class="sheet-table-cell"><input type="text" name="attr_groupGoal" placeholder="Group Goal"/></span>
 				</div>
 			</div>
 			<div class="sheet-table sheet-fill">
-				<div class="sheet-table-row"> <!-- Group -->
+				<div class="sheet-table-row sheet-table-cell"> <!-- Friends -->
 					<div class="sheet-table-row">
-						<span class="sheet-table-cell"><label>Group</label></span>
-						<span class="sheet-table-cell"><label>Group goal</label></span>
+						<label class="sheet-table-header">Friends</label>
 					</div>
-					<div class="sheet-table-row">
-						<span class="sheet-table-cell"><input type="text" name="attr_groupName"  placeholder="Group Name"/></span>
-						<span class="sheet-table-cell"><textarea name="attr_groupGoal" placeholder="Group Goal"></textarea></span>
-					</div>
-				</div>
-				<div class="sheet-table-row"> <!-- Friends -->
-					<div class="sheet-table-row">
-						<label class="sheet-table-cell">Friends</label>
-					</div>
-					<div class="sheet-table-row">
-						<fieldset class="repeating_friends-list sheet-table-row"> 
-								<input type="text" name="attr_friendName" placeholder="Friend Name" />
-								<input type="text" name="attr_friendRace" placeholder="Friend Race"/>
-								<input type="text" name="attr_friendOccupation" placeholder="Friend Occupation"/>
-								<input type="text" name="attr_friendPlayer" placeholder="Player"/>
-						</fieldset>
-					</div>
+					<fieldset class="repeating_friends-list sheet-table-row"> 
+						<span class="sheet-table-cell"><input type="text" name="attr_friendName" placeholder="Name" /></span>
+						<span class="sheet-table-cell"><input type="text" name="attr_friendRace" placeholder="Race"/></span>
+						<span class="sheet-table-cell"><input type="text" name="attr_friendOccupation" placeholder="Occupation"/></span>
+						<span class="sheet-table-cell"><input type="text" name="attr_friendPlayer" placeholder="Player"/></span>
+					</fieldset>
 				</div>
 			</div>
 		</div>
 	</div>
 		
-	<div class="sheet-row"> 
-		<div><!-- being Weapons -->
+	<div class="sheet-2colrow"> 
+		<div class="sheet-col"><!-- being Weapons -->
 			<div class="sheet-hideable">
 				<h1>Attacks</h1>
 				<input type="checkbox" class="sheet-section-toggle" name="attr_weapon-options-flag" checked="checked"/>
@@ -258,7 +255,7 @@ Attributes as repeating sections?
 						<input type="text" name="attr_weapon1-name" placeholder="Name of attack or power"/>
 					</span>
 					<span class="sheet-table-cell">
-						<input type="text" name="attr_weapon1-formula" placeholder="Damage (e.g. 1d8+1d6+3)"/>
+						<input type="text" name="attr_weapon1-formula" placeholder="Damage (e.g. 1d8+3+1d6)"/>
 					</span>
 					
 					<!-- Saving for later implementation
@@ -280,25 +277,110 @@ Attributes as repeating sections?
 				</div>
 			</fieldset>
 		</div><!-- END Weapons-->
-		<div><!-- Begin Armor -->
-			<h1>Defenses</h1>
+		<div class="sheet-col"><!-- Begin Armor -->
+			<div class="sheet-hideable">
+				<h1>Defenses</h1>
+				<input type="checkbox" class="sheet-section-toggle" name="attr_defense-options-flag" checked="checked"/>
+			</div>
 			<fieldset class="repeating_armor sheet-table">
 				<div class="sheet-table-row">
-					<span><button type='roll' name="roll_defense" value="&{template:defense}{{name=@{defense-name}}}{{attribute=[[@{defense-attribute}]]}}{{attribute1=[[1+@{defense-attribute}]]}}{{defense-roll=[[1d20]]}}{{damage-negated=[[@{defense-formula}]]}}{{defense-crit=[[1d20]]}}{{damage-crit=[[1d6]]}}{{character-name=@{character-name}}}" style="background-image:url(http://i.imgur.com/QFy0qCe.png?1);background-position:center;background-repeat:no-repeat;background-position:center;background-size:28px 28px;"></button></span>
+					<span><button type='roll' name="roll_defense" value="&{template:defense}{{name=@{defense-name}}}{{attribute=[[@{defense-attribute}]]}}{{attribute1=[[1+@{defense-attribute}]]}}{{defense-roll=[[1d20]]}}{{damage-negated=[[@{defense-formula}]]}}{{defense-crit=[[1d20]]}}{{damage-crit=[[1d6]]}}{{character-name=@{character-name}}}" style="background-image:url(http://i.imgur.com/QFy0qCe.png?1); background-position:center;background-repeat:no-repeat;background-position:center;background-size:28px 28px;"></button></span>
 					<span class="sheet-table-cell"><input type="text" name="attr_defense-name" placeholder="Armor name"/></span>
-					<span class="sheet-table-cell"><input type="text" name="attr_defense-formula" value="1d4+0"/></span>
+					<span class="sheet-table-cell"><input type="text" name="attr_defense-formula" placeholder="(e.g. 1d4-2)"/></span>
 				</div>
 			</fieldset>
 		</div>  <!-- END Armor-->
 	</div>
-	
 </div>
 <!-- *******  PAGE 2 -->
 <div class="sheet-section sheet-section-pc2" style="text-align:center;"> 
-	<div class="sheet-col">
-		<h1>Traits | Abilities | Rituals | Powers</h1>
-		<fieldset class="repeating_ability sheet-table">
-			<div class="sheet-table-row">
+	<h1>Traits | Abilities | Rituals | Powers</h1>
+	<div class="sheet-2colrow" style="text-align:center;">
+		<div class="sheet-col">
+			<fieldset class="repeating_ability">
+				<div class="sheet-table">
+					<div class="sheet-table-row">
+							<div class=" sheet-table-row">
+								<span class="sheet-table-cell" >
+									<select name="attr_ability-type">
+										<option value="ability" selected>Ability</option>
+										<option value="trait">Trait</option>
+									</select>
+								</span>
+								<span class="sheet-table-cell" >
+									<select name="attr_ability-action" title="Ability action type">
+										<option value="active" >Active</option>
+										<option value="free">Free</option>
+										<option value="passive">Passive</option>
+										<option value="reactive">Reactive</option>
+										<option value="special" selected>Special</option>
+									</select>
+								</span>
+								<span class="sheet-table-cell" >
+									<select name="attr_ability-level" title="Skill level">
+										<option value="novice">Novice</option>
+										<option value="adept">Adept</option>
+										<option value="master">Master</option>
+									</select>
+								</span>
+								<span  class="sheet-table-cell" style="width:100%">
+									<input type="text" name="attr_ability-desc-short" placeholder="Short description"/>
+								</span>
+							</div>
+					</div>
+					<div class="sheet-table-row">
+						<div class="sheet-table-cell">
+							<textarea name="attr_ability-desc-long" title="Long description" placeholder="Full description"></textarea>
+						</div>
+					</div>
+				</div>
+			</fieldset>	
+		</div>
+		
+		<div class="sheet-col">
+			<fieldset class="repeating_power">
+				<div class="sheet-table">
+					<div class="sheet-table-row">
+							<div class=" sheet-table-row">
+								<span class="sheet-table-cell" >
+									<select name="attr_ability-type">
+										<option value="power" selected>Power</option>
+										<option value="ritual">Ritual</option>
+									</select>
+								</span>
+								<span class="sheet-table-cell" >
+									<select name="attr_ability-action" title="Ability action type">
+										<option value="active" >Active</option>
+										<option value="free">Free</option>
+										<option value="passive">Passive</option>
+										<option value="reactive">Reactive</option>
+										<option value="special" selected>Special</option>
+									</select>
+								</span>
+								<span class="sheet-table-cell" >
+									<select name="attr_power-level" title="Skill level">
+										<option value="novice">Novice</option>
+										<option value="adept">Adept</option>
+										<option value="master">Master</option>
+									</select>
+								</span>
+								<span  class="sheet-table-cell" style="width:100%">
+									<input type="text" name="attr_power-desc-short" placeholder="Short description"/>
+								</span>
+							</div>
+					</div>
+					<div class="sheet-table-row">
+						<div class="sheet-table-cell">
+							<textarea name="attr_power-desc-long" title="Long description" placeholder="Full description"></textarea>
+						</div>
+					</div>
+				</div>
+			</fieldset>	
+		</div>
+	</div>
+</div>
+		
+		
 			
 			<!-- Labels if needed
 				<div class="sheet-table-row">
@@ -308,70 +390,34 @@ Attributes as repeating sections?
 					<span class="sheet-table-cell"><label>Level</label></span>
 					<span class="sheet-table-cell"><label>Short Description</label></span>
 				</div>
-				
-				-->
-				<div class="sheet-table-row">
-					<span class="sheet-table-cell">
-						<select name="attr_ability-type" placeholder="Name">
-							<option value="0" selected>Ability</option>
-							<option value="1">Trait</option>
-							<option value="2">Power</option>
-							<option value="3">Ritual</option>
-						</select>
-					</span>
-					<span class="sheet-table-cell"><input type="text" name="attr_ability-name" placeholder="Name"/></span>
-					<span class="sheet-table-cell">
-						<select name="attr_trait-type" title="Trait action type">
-							<option value="1" >Active</option>
-							<option value="2">Free</option>
-							<option value="3">Passive</option>
-							<option value="4">Reactive</option>
-							<option value="5" selected>Special</option>
-						</select>
-					</span>
-					<span class="sheet-table-cell">
-						<select name="attr_ability-level" title="Skill level">
-							<option value="novice">Novice</option>
-							<option value="adept">Adept</option>
-							<option value="master">Master</option>
-						</select>
-					</span>
-					<span class="sheet-table-cell"><input type="text" name="attr_ability-desc-short" placeholder="Short description"/></span>
-				</div>
-			</div>
-			<div class="sheet-table-row sheet-table-cell"><textarea name="attr_ability-desc-long" title="Long description" placeholder="Full description" style="margin:4px 0px;"></textarea></div>
-		</fieldset>
-	</div>
-</div>
+			-->
+
 
 <!-- *******  PAGE 3 -->
-<div class="sheet-section sheet-section-pc3">   
-</div>
-
-<!-- *******  PAGE 4 -->
-<div class="sheet-section sheet-section-pc4">
-    <div class="sheet-row" style="text-align:center">
-        <div>
-            <div style="display:inline-block;">
-                <label style="text-align:center;padding:0;margin:0;">Thaler</label>
-                <input type="number" class="sheet-number-box-small" value="0" name="attr_player-thaler" style="width:4em;"/>
-            </div>
-            <div style="display:inline-block;">
-                <label style="text-align:center;padding:0;margin:0;">Shilling</label>
-                <input type="number" class="sheet-number-box-small" value="0" name="attr_player-shilling" style="width:4em;"/>
-            </div>
-            <div style="display:inline-block;">
-                <label style="text-align:center;padding:0;margin:0;">Orteg</label>
-                <input type="number" class="sheet-number-box-small" value="0" name="attr_player-orteg" style="width:4em;"/>
-            </div>
-        </div>
-    </div>
+<div class="sheet-section sheet-section-pc3">
+	<div class="sheet-row" style="text-align:center;">
+		<div class="sheet-col">
+			<div class="sheet-table">
+				<div class="sheet-table-row">
+					<span class="sheet-table-cell"><input type="number" value="0" name="attr_player-thaler"/></span>
+					<span class="sheet-table-cell"><input type="number" value="0" name="attr_player-shilling"/></span>
+					<span class="sheet-table-cell"><input type="number" value="0" name="attr_player-orteg"/></span>
+					
+				</div>
+				<div class="sheet-table-row">
+					<span class="sheet-table-cell"><label>Thaler</label></span>
+					<span class="sheet-table-cell"><label>Shilling</label></span>
+					<span class="sheet-table-cell"><label>Orteg</label></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
     <div class="sheet-row">
-        <div class="sheet-2colrow">
             <div class="sheet-col">
                 <div style="margin-bottom:1em;">
                     <label class="sheet-label-large">Detailed Equipment & Artifacts</label>
-                    
                     <fieldset class="repeating_artifacts sheet-table" style="margin-bottom:4px">
                         <div class="sheet-table-row">
                             <span class="sheet-table-cell"><input type="checkbox" name="attr_artifact-isBound" title="Bound to player"/></span>
@@ -394,12 +440,11 @@ Attributes as repeating sections?
                     <fieldset class="repeating_item sheet-table">
 						<div class="sheet-table-row">
 							<span class="sheet-table-cell"><input type="text" style="width:290px" name="attr_item-name" title="Item Name" placeholder="Item Name"/></span>
-							<span class="sheet-table-cell"<input type="number" class="sheet-number-box-small" name="attr_item-quantity" value="1" title="Item Quantity"/></span>
+							<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small" name="attr_item-quantity" value="1" title="Item Quantity"/></span>
 						</div>
 					</fieldset>
                 </div>
             </div> <!-- END column 1 -->
-        </div>
     </div>
 </div> 
 
