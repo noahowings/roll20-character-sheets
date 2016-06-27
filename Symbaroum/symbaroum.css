@@ -5,21 +5,21 @@
 
 /*** Font ***/
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #fafafa;
+    color:    #;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #fafafa;
+   color:    grey;
    opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #fafafa;
+   color:    grey;
    opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    #fafafa;
+   color:    grey;
 }
 :placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
-  color:    #fafafa;
+  color:    grey;
 }
 
 /*** Pages ***/
@@ -135,12 +135,12 @@ select {
     box-sizing: border-box;
     box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 }
-select > option {
-}
+
 input[type=radio]{
 	margin:0 5px 0 5px;   
 }
 input[type="number"]{
+	height:2em;
 	min-width:2em;
 	max-width:5em;
 	text-align:right;
@@ -151,6 +151,9 @@ input[type="number"].sheet-number-box-small{
 input[type="number"]:disabled{
 }
 input[type="text"]{
+	height:2em;
+	min-width:5em;
+	max-width:15em;
 }
 input[type="checkbox"] {
 	
@@ -173,13 +176,12 @@ textarea {
 }
 h1{
 	color:white;
-
 }
 
 /*** Table formatting ***/
 .sheet-table {
     display:table;  
-	padding:8px;
+	padding:6px;
 	margin:6px;
 	background:rgba(0,0,0,0.55);
 }
@@ -189,8 +191,12 @@ h1{
 	width:100%;
 	height:auto;
 }
+.sheet-fill{
+	width:100%;
+}
 
 .sheet-table-cell{
+	padding:1px;
     text-align:center;  
 	display:table-cell;
 	vertical-align:middle;
@@ -202,12 +208,13 @@ h1{
 }
 .repcontainer label,
 .sheet-table label {
-    text-align:left;
+    text-align:center;
 	padding:0px;
 	padding-left:3px;
 	border:0px; 
 	margin:0px;
 	margin-top:-2px;
+	font-size:.9em;
 }
 
 .repcontainer {
@@ -356,6 +363,9 @@ h1 {
 	z-index:9999;
 }
 */
+label.sheet-table-header {
+	font-size:1.2em;
+}
 .charsheet * {
 	font-family: "Georgia"; 
 	/*line-height:10px;*/
