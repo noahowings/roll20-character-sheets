@@ -1,10 +1,10 @@
 <script type="text/worker">
 
-on("change:strong change:strong_temp", function(eventinfo) {
+on("change:strong change:strong_temp", function() {
    getAttrs(["strong", "strong_temp"], function(values) {
       setAttrs({
-          toughness_total: Math.max(values.strong+values.strong_temp,10),
-          pain_threshold: Math.ceil(values.strong+values.strong_temp)/2
+          toughness_total: Math.max(parseInt(values["strong"])+parseInt(values["strong_temp"]),10),
+          pain_threshold: Math.ceil((parseInt(values["strong"])+parseInt(values["strong_temp"]))/2)
       });
    });
 });
