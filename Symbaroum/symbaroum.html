@@ -1,22 +1,32 @@
 <script type="text/worker">
 
+
+<!--  Attribute changes  -->
 on("change:strong change:strong_temp", function() {
    getAttrs(["strong", "strong_temp"], function(values) {
       setAttrs({
-          toughness_total: Math.max(parseInt(values["strong"])+parseInt(values["strong_temp"]),10),
-          pain_threshold: Math.ceil((parseInt(values["strong"])+parseInt(values["strong_temp"]))/2)
+          toughness_total: Math.max(parseInt(values["strong"],10)+parseInt(values["strong_temp"],10),10),
+          pain_threshold: Math.ceil((parseInt(values["strong"],10)+parseInt(values["strong_temp"]),10)/2)
       });
    });
 });
+on("change:resolute change:resolute_temp", function() {
+   getAttrs(["resolute", "resolute_temp"], function(values) {
+      setAttrs({
+          corruption_threshold: parseInt(values["resolute"],10)+parseInt(values["resolute_temp"],10)
+      });
+   });
+});
+
+
+
 
 </script>
 
 
 <!--
 *********TODO*********
-Add custom ability names
 New Roll Template styles
-"Permanent bonus" to attack and defense section
 Advantage button - auto calculate +2atk and 1d4dmg
 deathroll button
 Concentration check
@@ -24,7 +34,19 @@ Random rolls
 Reset buttons
 Attributes as repeating sections?
 
-    
+automatic item generation: click a button and add an item to inventory, automatically deduct cash.
+
+
+
+API:
+Add a bestiary that DM can set visibility on, so a low "knowledge roll" wouldn't give away too much.
+Traps freeze player movement.
+Add sfx/vfx when a door is open, a trap is sprung, etc.
+Automatic music changes when entering a new scene.
+A* path from A->B when a character moves. Auto calculate distance and compare to move distance.
+    [Path Math]
+Initiative script, trigger sfx, pause all tokens when combat begins.
+    [GroupInitiative]
 **********************
 -->
 
@@ -80,7 +102,7 @@ Attributes as repeating sections?
 					<div class="sheet-table-row">
 							<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small"  style="vertical-align:middle"name="attr_corruption" min="0" value="0"/></span>
 							<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small"  style="vertical-align:middle"name="attr_corruption_permanent" min="0" value="0"/></span>
-							<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small"  style="vertical-align:middle" name="attr_corruption_threshold" value="ceil(@{resolute}/2)" disabled="true" /></span>
+							<span class="sheet-table-cell"><input type="number" class="sheet-number-box-small"  style="vertical-align:middle" name="attr_corruption_threshold" /></span>
 					</div>
 					<div class="sheet-table-row">
 						<span class="sheet-table-cell"><label>temp</label></span>
@@ -518,3 +540,8 @@ Attributes as repeating sections?
 -->
 	</table>
 </rolltemplate>
+
+<footer>
+	Created by Nowin for <a href="twitch.tv/tabletop_twitch">Tabletop Twitch</a><br/>
+	Last updated: 2016-06-29
+</footer>
