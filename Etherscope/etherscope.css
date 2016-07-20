@@ -1,0 +1,26 @@
+.sheet-table {
+	display:table;
+}.sheet-table-row {
+	display:table-row;
+}.sheet-table-cell {
+	display:table-cell;
+    width:auto;
+}
+select{
+	margin-bottom:0px;
+}
+textarea{
+	margin-bottom:0px;
+	width:200px;
+	height:18px;
+}
+
+.sheet-input-with-label{
+	display:inline-block;
+	vertical-align:top;
+}
+
+select{
+	width:auto;
+	
+}
