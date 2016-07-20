@@ -3,7 +3,7 @@
 
 
 <div class="sheet-2colrow">
-	<div class="sheet-col">
+    <div class="sheet-col" style="width:45%;">
 		<div class="sheet-table">
 			<div class="sheet-table-row">
 				<span class="sheet-table-cell"><h2>Ability</h2></span>
@@ -597,13 +597,15 @@
 			</div>
 		</div>
 	</div>	
-	<div class="sheet-col" style="width:40%;">
+	<div class="sheet-col" style="width:50%;">
 		<div>
 			<div>
 				<span class="sheet-input-with-label"><input type="text" name="attr_character_name" style="width:150px;" /><h5>Name</h5></span>
 				<span class="sheet-input-with-label"><input type="text" name="attr_character_player" style="width:150px;" /><h5>Player</h5></span>
 				<span class="sheet-input-with-label"><input type="text" name="attr_character_template" style="width:150px;" /><h5>Template</h5></span>
 				<span class="sheet-input-with-label"><input type="text" name="attr_character_race" style="width:150px;" /><h5>Race</h5></span>
+			</div>
+			<div>
 				<span class="sheet-input-with-label"><input type="number" name="attr_character_age"/><h5>Age</h5></span>
 				<span class="sheet-input-with-label"><input type="text" name="attr_character_gender" style="width:50px;" /><h5>Gender</h5></span>
 				<span class="sheet-input-with-label"><input type="text" name="attr_character_height" style="width:50px;" /><h5>Height</h5></span>
@@ -618,8 +620,6 @@
 			<div>
 				<span class="sheet-input-with-label"><input type="text" name="attr_allegiance_major" style="width:150px;"/><h5>Major Allegiance</h5></span>
 				<span class="sheet-input-with-label"><input type="text" name="attr_allegiance_minor" style="width:150px;"/><h5>Minor Allegiance</h5></span>
-				<span class="sheet-input-with-label" style="vertical-align:top;"><input type="number" name="attr_excellent_pts"/><h5>Excellence Points</h5></span>
-				<span class="sheet-input-with-label" style="vertical-align:top;"><input type="number" name="attr_excellent_pts_unspent"/><h5>Unspent</h5></span>	
 			</div>
 		</div>
 		<div>
@@ -917,8 +917,11 @@
 		</span>
 	</fieldset>
 </div>
-
-
+<div>
+	<h2>Excellence</h2>
+	<span class="sheet-input-with-label" style="vertical-align:top;"><input type="number" name="attr_excellent_pts"/><h5>Points</h5></span>
+	<span class="sheet-input-with-label" style="vertical-align:top;"><input type="number" name="attr_excellent_pts_unspent"/><h5>Unspent</h5></span>	
+</div>			
 <div>
     <h2>Cybernaughtics</h2>
 	<fieldset class="repeating_cybernaughtics">
