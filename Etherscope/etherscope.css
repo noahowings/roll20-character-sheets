@@ -1,5 +1,6 @@
 .sheet-table {
 	display:table;
+	vertical-align:bottom;
 }.sheet-table-row {
 	display:table-row;
 }.sheet-table-cell {
@@ -17,10 +18,14 @@ textarea{
 
 .sheet-input-with-label{
 	display:inline-block;
-	vertical-align:top;
+	vertical-align:bottom;
 }
 
 select{
 	width:auto;
 	
+}
+
+input {
+	width:100%;
 }
