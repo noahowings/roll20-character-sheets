@@ -24,8 +24,20 @@ textarea{
 select{
 	width:auto;
 	
+	
 }
 
 input {
 	width:100%;
+}
+
+.sheet-vertical-text {
+	transform: rotate(90deg);
+	transform-origin: left top 0;
+}
+
+button{
+	text-align:left;
+	font-size:1em;
+	width:95%;
 }
