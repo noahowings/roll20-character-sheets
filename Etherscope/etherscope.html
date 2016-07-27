@@ -37,7 +37,7 @@ Influence Points at 1st level
 
 
 <div class="sheet-2colrow">
-    <div class="sheet-col" style="width:45%;">
+    <div class="sheet-col" style="width:55%;">
 		<div class="sheet-table">
 			<div class="sheet-table-row">
 				<span class="sheet-table-cell"></span>
@@ -49,10 +49,9 @@ Influence Points at 1st level
 					<span class="sheet-table-cell">Ability</span>
 					<span class="sheet-table-cell"></span>
 					<span class="sheet-table-cell">Misc</span>
-			</div> 
-			<div class="sheet-table-row">	
+			</div> <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_balance_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_balance" value="/roll d20 + [[@{balance_total}]]" style="width:95%;font-size:.75em;">Balance</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_balance" value="/roll d20 + [[@{balance_total}]]">Balance</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_balance_total" value="[[@{balance_ranks}+@{dex_mod}+@{balance_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_balance_ranks" min="0"/></span>
@@ -63,7 +62,7 @@ Influence Points at 1st level
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_bluff_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_bluff" value="/roll d20 + [[@{bluff_total}]]" style="width:95%;font-size:.75em;">Bluff</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_bluff" value="/roll d20 + [[@{bluff_total}]]">Bluff</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_bluff_total" value="[[@{bluff_ranks}+@{cha_mod}+@{bluff_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_bluff_ranks" min="0"/></span>
@@ -74,7 +73,7 @@ Influence Points at 1st level
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_climb_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_climb" value="/roll d20 + [[@{climb_total}]]" style="width:95%;font-size:.75em;">Climb</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_climb" value="/roll d20 + [[@{climb_total}]]">Climb</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_climb_total" value="[[@{climb_ranks}+@{str_mod}+@{climb_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_climb_ranks" min="0"/></span>
@@ -84,19 +83,19 @@ Influence Points at 1st level
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_climb_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_combat technique_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_combat technique" value="/roll d20 + [[@{combat technique_total}]]" style="width:95%;font-size:.75em;">Combat Technique</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_combat technique_total" value="[[@{combat technique_ranks}+@{varies_mod}+@{combat technique_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_combat_technique_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_combat_technique" value="/roll d20 + [[@{combat_technique_total}]]">Combat Technique</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_combat_technique_total" value="[[@{combat_technique_ranks}+@{varies_mod}+@{combat_technique_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_combat technique_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_varies_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_combat technique_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_combat_technique_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_concentration_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_concentration" value="/roll d20 + [[@{concentration_total}]]" style="width:95%;font-size:.75em;">Concentration</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_concentration" value="/roll d20 + [[@{concentration_total}]]">Concentration</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_concentration_total" value="[[@{concentration_ranks}+@{con_mod}+@{concentration_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_concentration_ranks" min="0"/></span>
@@ -106,19 +105,19 @@ Influence Points at 1st level
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_concentration_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_creative art_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_creative art" value="/roll d20 + [[@{creative art_total}]]" style="width:95%;font-size:.75em;">Creative Art</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_creative art_total" value="[[@{creative art_ranks}+@{int_mod}+@{creative art_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_creative_art_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_creative_art" value="/roll d20 + [[@{creative_art_total}]]">Creative Art</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_creative_art_total" value="[[@{creative_art_ranks}+@{int_mod}+@{creative_art_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_creative art_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_creative art_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_creative_art_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_diplomacy_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_diplomacy" value="/roll d20 + [[@{diplomacy_total}]]" style="width:95%;font-size:.75em;">Diplomacy</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_diplomacy" value="/roll d20 + [[@{diplomacy_total}]]">Diplomacy</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_diplomacy_total" value="[[@{diplomacy_ranks}+@{cha_mod}+@{diplomacy_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_diplomacy_ranks" min="0"/></span>
@@ -129,7 +128,7 @@ Influence Points at 1st level
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_disguise_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_disguise" value="/roll d20 + [[@{disguise_total}]]" style="width:95%;font-size:.75em;">Disguise</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_disguise" value="/roll d20 + [[@{disguise_total}]]">Disguise</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_disguise_total" value="[[@{disguise_ranks}+@{cha_mod}+@{disguise_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_disguise_ranks" min="0"/></span>
@@ -139,74 +138,74 @@ Influence Points at 1st level
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_disguise_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_engineer (chemical)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_engineer (chemical)" value="/roll d20 + [[@{engineer (chemical)_total}]]" style="width:95%;font-size:.75em;">Engineer (chemical)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_engineer (chemical)_total" value="[[@{engineer (chemical)_ranks}+@{int_mod}+@{engineer (chemical)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_engineer_(chemical)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_engineer_(chemical)" value="/roll d20 + [[@{engineer_(chemical)_total}]]">Engineer (chemical)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_engineer_(chemical)_total" value="[[@{engineer_(chemical)_ranks}+@{int_mod}+@{engineer_(chemical)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer (chemical)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer (chemical)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer_(chemical)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_engineer (ethertech)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_engineer (ethertech)" value="/roll d20 + [[@{engineer (ethertech)_total}]]" style="width:95%;font-size:.75em;">Engineer (ethertech)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_engineer (ethertech)_total" value="[[@{engineer (ethertech)_ranks}+@{int_mod}+@{engineer (ethertech)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_engineer_(ethertech)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_engineer_(ethertech)" value="/roll d20 + [[@{engineer_(ethertech)_total}]]">Engineer (ethertech)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_engineer_(ethertech)_total" value="[[@{engineer_(ethertech)_ranks}+@{int_mod}+@{engineer_(ethertech)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer (ethertech)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer (ethertech)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer_(ethertech)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_engineer (mechanical)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_engineer (mechanical)" value="/roll d20 + [[@{engineer (mechanical)_total}]]" style="width:95%;font-size:.75em;">Engineer (mechanical)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_engineer (mechanical)_total" value="[[@{engineer (mechanical)_ranks}+@{int_mod}+@{engineer (mechanical)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_engineer_(mechanical)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_engineer_(mechanical)" value="/roll d20 + [[@{engineer_(mechanical)_total}]]">Engineer (mechanical)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_engineer_(mechanical)_total" value="[[@{engineer_(mechanical)_ranks}+@{int_mod}+@{engineer_(mechanical)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer (mechanical)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer (mechanical)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer_(mechanical)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_engineer (pharmaceutical)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_engineer (pharmaceutical)" value="/roll d20 + [[@{engineer (pharmaceutical)_total}]]" style="width:95%;font-size:.75em;">Engineer (pharmaceutical)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_engineer (pharmaceutical)_total" value="[[@{engineer (pharmaceutical)_ranks}+@{int_mod}+@{engineer (pharmaceutical)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_engineer_(pharmaceutical)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_engineer_(pharmaceutical)" value="/roll d20 + [[@{engineer_(pharmaceutical)_total}]]">Engineer (pharmaceutical)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_engineer_(pharmaceutical)_total" value="[[@{engineer_(pharmaceutical)_ranks}+@{int_mod}+@{engineer_(pharmaceutical)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer (pharmaceutical)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer (pharmaceutical)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer_(pharmaceutical)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_engineer (structural)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_engineer (structural)" value="/roll d20 + [[@{engineer (structural)_total}]]" style="width:95%;font-size:.75em;">Engineer (structural)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_engineer (structural)_total" value="[[@{engineer (structural)_ranks}+@{int_mod}+@{engineer (structural)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_engineer_(structural)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_engineer_(structural)" value="/roll d20 + [[@{engineer_(structural)_total}]]">Engineer (structural)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_engineer_(structural)_total" value="[[@{engineer_(structural)_ranks}+@{int_mod}+@{engineer_(structural)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer (structural)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer (structural)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_engineer_(structural)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_escape artist_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_escape artist" value="/roll d20 + [[@{escape artist_total}]]" style="width:95%;font-size:.75em;">Escape Artist</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_escape artist_total" value="[[@{escape artist_ranks}+@{dex_mod}+@{escape artist_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_escape_artist_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_escape_artist" value="/roll d20 + [[@{escape_artist_total}]]">Escape Artist</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_escape_artist_total" value="[[@{escape_artist_ranks}+@{dex_mod}+@{escape_artist_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_escape artist_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_dex_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_escape artist_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_escape_artist_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_forgery_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_forgery" value="/roll d20 + [[@{forgery_total}]]" style="width:95%;font-size:.75em;">Forgery</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_forgery" value="/roll d20 + [[@{forgery_total}]]">Forgery</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_forgery_total" value="[[@{forgery_ranks}+@{int_mod}+@{forgery_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_forgery_ranks" min="0"/></span>
@@ -216,19 +215,19 @@ Influence Points at 1st level
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_forgery_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_handle animal_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_handle animal" value="/roll d20 + [[@{handle animal_total}]]" style="width:95%;font-size:.75em;">Handle Animal</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_handle animal_total" value="[[@{handle animal_ranks}+@{cha_mod}+@{handle animal_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_handle_animal_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_handle_animal" value="/roll d20 + [[@{handle_animal_total}]]">Handle Animal</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_handle_animal_total" value="[[@{handle_animal_ranks}+@{cha_mod}+@{handle_animal_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_handle animal_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_cha_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_handle animal_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_handle_animal_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_hide_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_hide" value="/roll d20 + [[@{hide_total}]]" style="width:95%;font-size:.75em;">Hide</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_hide" value="/roll d20 + [[@{hide_total}]]">Hide</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_hide_total" value="[[@{hide_ranks}+@{dex_mod}+@{hide_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_hide_ranks" min="0"/></span>
@@ -239,7 +238,7 @@ Influence Points at 1st level
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_intimidate_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_intimidate" value="/roll d20 + [[@{intimidate_total}]]" style="width:95%;font-size:.75em;">Intimidate</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_intimidate" value="/roll d20 + [[@{intimidate_total}]]">Intimidate</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_intimidate_total" value="[[@{intimidate_ranks}+@{cha_mod}+@{intimidate_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_intimidate_ranks" min="0"/></span>
@@ -250,7 +249,7 @@ Influence Points at 1st level
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_investigate_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_investigate" value="/roll d20 + [[@{investigate_total}]]" style="width:95%;font-size:.75em;">Investigate</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_investigate" value="/roll d20 + [[@{investigate_total}]]">Investigate</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_investigate_total" value="[[@{investigate_ranks}+@{int_mod}+@{investigate_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_investigate_ranks" min="0"/></span>
@@ -261,7 +260,7 @@ Influence Points at 1st level
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_jump_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_jump" value="/roll d20 + [[@{jump_total}]]" style="width:95%;font-size:.75em;">Jump</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_jump" value="/roll d20 + [[@{jump_total}]]">Jump</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_jump_total" value="[[@{jump_ranks}+@{str_mod}+@{jump_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_jump_ranks" min="0"/></span>
@@ -271,118 +270,118 @@ Influence Points at 1st level
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_jump_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge (art)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge (art)" value="/roll d20 + [[@{knowledge (art)_total}]]" style="width:95%;font-size:.75em;">Knowledge (art)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_knowledge (art)_total" value="[[@{knowledge (art)_ranks}+@{int_mod}+@{knowledge (art)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge_(art)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge_(art)" value="/roll d20 + [[@{knowledge_(art)_total}]]">Knowledge (art)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_knowledge_(art)_total" value="[[@{knowledge_(art)_ranks}+@{int_mod}+@{knowledge_(art)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (art)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (art)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge_(art)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge (civics)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge (civics)" value="/roll d20 + [[@{knowledge (civics)_total}]]" style="width:95%;font-size:.75em;">Knowledge (civics)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_knowledge (civics)_total" value="[[@{knowledge (civics)_ranks}+@{int_mod}+@{knowledge (civics)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge_(civics)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge_(civics)" value="/roll d20 + [[@{knowledge_(civics)_total}]]">Knowledge (civics)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_knowledge_(civics)_total" value="[[@{knowledge_(civics)_ranks}+@{int_mod}+@{knowledge_(civics)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (civics)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (civics)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge_(civics)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge (current events)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge (current events)" value="/roll d20 + [[@{knowledge (current events)_total}]]" style="width:95%;font-size:.75em;">Knowledge (current events)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_knowledge (current events)_total" value="[[@{knowledge (current events)_ranks}+@{int_mod}+@{knowledge (current events)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge_(current_events)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge_(current_events)" value="/roll d20 + [[@{knowledge_(current_events)_total}]]">Knowledge (current events)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_knowledge_(current_events)_total" value="[[@{knowledge_(current_events)_ranks}+@{int_mod}+@{knowledge_(current_events)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (current events)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (current events)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge_(current_events)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge (history)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge (history)" value="/roll d20 + [[@{knowledge (history)_total}]]" style="width:95%;font-size:.75em;">Knowledge (history)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_knowledge (history)_total" value="[[@{knowledge (history)_ranks}+@{int_mod}+@{knowledge (history)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge_(history)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge_(history)" value="/roll d20 + [[@{knowledge_(history)_total}]]">Knowledge (history)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_knowledge_(history)_total" value="[[@{knowledge_(history)_ranks}+@{int_mod}+@{knowledge_(history)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (history)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (history)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge_(history)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge (industry)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge (industry)" value="/roll d20 + [[@{knowledge (industry)_total}]]" style="width:95%;font-size:.75em;">Knowledge (industry)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_knowledge (industry)_total" value="[[@{knowledge (industry)_ranks}+@{int_mod}+@{knowledge (industry)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge_(industry)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge_(industry)" value="/roll d20 + [[@{knowledge_(industry)_total}]]">Knowledge (industry)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_knowledge_(industry)_total" value="[[@{knowledge_(industry)_ranks}+@{int_mod}+@{knowledge_(industry)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (industry)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (industry)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge_(industry)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge (linguistics)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge (linguistics)" value="/roll d20 + [[@{knowledge (linguistics)_total}]]" style="width:95%;font-size:.75em;">Knowledge (linguistics)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_knowledge (linguistics)_total" value="[[@{knowledge (linguistics)_ranks}+@{int_mod}+@{knowledge (linguistics)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge_(linguistics)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge_(linguistics)" value="/roll d20 + [[@{knowledge_(linguistics)_total}]]">Knowledge (linguistics)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_knowledge_(linguistics)_total" value="[[@{knowledge_(linguistics)_ranks}+@{int_mod}+@{knowledge_(linguistics)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (linguistics)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (linguistics)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge_(linguistics)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge (medicine)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge (medicine)" value="/roll d20 + [[@{knowledge (medicine)_total}]]" style="width:95%;font-size:.75em;">Knowledge (medicine)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_knowledge (medicine)_total" value="[[@{knowledge (medicine)_ranks}+@{int_mod}+@{knowledge (medicine)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge_(medicine)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge_(medicine)" value="/roll d20 + [[@{knowledge_(medicine)_total}]]">Knowledge (medicine)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_knowledge_(medicine)_total" value="[[@{knowledge_(medicine)_ranks}+@{int_mod}+@{knowledge_(medicine)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (medicine)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (medicine)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge_(medicine)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge (mystical philosophy)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge (mystical philosophy)" value="/roll d20 + [[@{knowledge (mystical philosophy)_total}]]" style="width:95%;font-size:.75em;">Knowledge (mystical philosophy)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_knowledge (mystical philosophy)_total" value="[[@{knowledge (mystical philosophy)_ranks}+@{int_mod}+@{knowledge (mystical philosophy)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge_(mystical_philosophy)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge_(mystical_philosophy)" value="/roll d20 + [[@{knowledge_(mystical_philosophy)_total}]]">Knowledge (mystical philosophy)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_knowledge_(mystical_philosophy)_total" value="[[@{knowledge_(mystical_philosophy)_ranks}+@{int_mod}+@{knowledge_(mystical_philosophy)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (mystical philosophy)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (mystical philosophy)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge_(mystical_philosophy)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge (natural philosophy)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge (natural philosophy)" value="/roll d20 + [[@{knowledge (natural philosophy)_total}]]" style="width:95%;font-size:.75em;">Knowledge (natural philosophy)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_knowledge (natural philosophy)_total" value="[[@{knowledge (natural philosophy)_ranks}+@{int_mod}+@{knowledge (natural philosophy)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge_(natural_philosophy)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge_(natural_philosophy)" value="/roll d20 + [[@{knowledge_(natural_philosophy)_total}]]">Knowledge (natural philosophy)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_knowledge_(natural_philosophy)_total" value="[[@{knowledge_(natural_philosophy)_ranks}+@{int_mod}+@{knowledge_(natural_philosophy)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (natural philosophy)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (natural philosophy)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge_(natural_philosophy)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge (tactics)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge (tactics)" value="/roll d20 + [[@{knowledge (tactics)_total}]]" style="width:95%;font-size:.75em;">Knowledge (tactics)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_knowledge (tactics)_total" value="[[@{knowledge (tactics)_ranks}+@{int_mod}+@{knowledge (tactics)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_knowledge_(tactics)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_knowledge_(tactics)" value="/roll d20 + [[@{knowledge_(tactics)_total}]]">Knowledge (tactics)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_knowledge_(tactics)_total" value="[[@{knowledge_(tactics)_ranks}+@{int_mod}+@{knowledge_(tactics)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (tactics)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge (tactics)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_knowledge_(tactics)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_listen_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_listen" value="/roll d20 + [[@{listen_total}]]" style="width:95%;font-size:.75em;">Listen</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_listen" value="/roll d20 + [[@{listen_total}]]">Listen</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_listen_total" value="[[@{listen_ranks}+@{wis_mod}+@{listen_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_listen_ranks" min="0"/></span>
@@ -392,19 +391,19 @@ Influence Points at 1st level
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_listen_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_move silently_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_move silently" value="/roll d20 + [[@{move silently_total}]]" style="width:95%;font-size:.75em;">Move Silently</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_move silently_total" value="[[@{move silently_ranks}+@{dex_mod}+@{move silently_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_move_silently_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_move_silently" value="/roll d20 + [[@{move_silently_total}]]">Move Silently</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_move_silently_total" value="[[@{move_silently_ranks}+@{dex_mod}+@{move_silently_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_move silently_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_dex_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_move silently_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_move_silently_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_munitions_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_munitions" value="/roll d20 + [[@{munitions_total}]]" style="width:95%;font-size:.75em;">Munitions</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_munitions" value="/roll d20 + [[@{munitions_total}]]">Munitions</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_munitions_total" value="[[@{munitions_ranks}+@{int_mod}+@{munitions_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_munitions_ranks" min="0"/></span>
@@ -415,7 +414,7 @@ Influence Points at 1st level
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_navigate_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_navigate" value="/roll d20 + [[@{navigate_total}]]" style="width:95%;font-size:.75em;">Navigate</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_navigate" value="/roll d20 + [[@{navigate_total}]]">Navigate</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_navigate_total" value="[[@{navigate_ranks}+@{int_mod}+@{navigate_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_navigate_ranks" min="0"/></span>
@@ -426,7 +425,7 @@ Influence Points at 1st level
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_perform_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_perform" value="/roll d20 + [[@{perform_total}]]" style="width:95%;font-size:.75em;">Perform</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_perform" value="/roll d20 + [[@{perform_total}]]">Perform</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_perform_total" value="[[@{perform_ranks}+@{cha_mod}+@{perform_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_perform_ranks" min="0"/></span>
@@ -436,30 +435,30 @@ Influence Points at 1st level
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_perform_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_pilot (civilian)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_pilot (civilian)" value="/roll d20 + [[@{pilot (civilian)_total}]]" style="width:95%;font-size:.75em;">Pilot (civilian)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_pilot (civilian)_total" value="[[@{pilot (civilian)_ranks}+@{dex_mod}+@{pilot (civilian)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_pilot_(civilian)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_pilot_(civilian)" value="/roll d20 + [[@{pilot_(civilian)_total}]]">Pilot (civilian)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_pilot_(civilian)_total" value="[[@{pilot_(civilian)_ranks}+@{dex_mod}+@{pilot_(civilian)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_pilot (civilian)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_dex_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_pilot (civilian)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_pilot_(civilian)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_pilot (military)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_pilot (military)" value="/roll d20 + [[@{pilot (military)_total}]]" style="width:95%;font-size:.75em;">Pilot (military)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_pilot (military)_total" value="[[@{pilot (military)_ranks}+@{dex_mod}+@{pilot (military)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_pilot_(military)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_pilot_(military)" value="/roll d20 + [[@{pilot_(military)_total}]]">Pilot (military)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_pilot_(military)_total" value="[[@{pilot_(military)_ranks}+@{dex_mod}+@{pilot_(military)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_pilot (military)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_dex_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_pilot (military)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_pilot_(military)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_research_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_research" value="/roll d20 + [[@{research_total}]]" style="width:95%;font-size:.75em;">Research</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_research" value="/roll d20 + [[@{research_total}]]">Research</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_research_total" value="[[@{research_ranks}+@{int_mod}+@{research_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_research_ranks" min="0"/></span>
@@ -470,7 +469,7 @@ Influence Points at 1st level
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_resolve_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_resolve" value="/roll d20 + [[@{resolve_total}]]" style="width:95%;font-size:.75em;">Resolve</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_resolve" value="/roll d20 + [[@{resolve_total}]]">Resolve</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_resolve_total" value="[[@{resolve_ranks}+@{cha_mod}+@{resolve_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_resolve_ranks" min="0"/></span>
@@ -481,7 +480,7 @@ Influence Points at 1st level
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_ride_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_ride" value="/roll d20 + [[@{ride_total}]]" style="width:95%;font-size:.75em;">Ride</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_ride" value="/roll d20 + [[@{ride_total}]]">Ride</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_ride_total" value="[[@{ride_ranks}+@{dex_mod}+@{ride_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_ride_ranks" min="0"/></span>
@@ -491,52 +490,52 @@ Influence Points at 1st level
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_ride_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_scope awareness_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_scope awareness" value="/roll d20 + [[@{scope awareness_total}]]" style="width:95%;font-size:.75em;">Scope Awareness</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_scope awareness_total" value="[[@{scope awareness_ranks}+@{wis_mod}+@{scope awareness_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_scope_awareness_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_scope_awareness" value="/roll d20 + [[@{scope_awareness_total}]]">Scope Awareness</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_scope_awareness_total" value="[[@{scope_awareness_ranks}+@{wis_mod}+@{scope_awareness_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_scope awareness_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_wis_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_scope awareness_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_scope_awareness_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_scope resilience_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_scope resilience" value="/roll d20 + [[@{scope resilience_total}]]" style="width:95%;font-size:.75em;">Scope Resilience</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_scope resilience_total" value="[[@{scope resilience_ranks}+@{cha_mod}+@{scope resilience_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_scope_resilience_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_scope_resilience" value="/roll d20 + [[@{scope_resilience_total}]]">Scope Resilience</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_scope_resilience_total" value="[[@{scope_resilience_ranks}+@{cha_mod}+@{scope_resilience_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_scope resilience_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_cha_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_scope resilience_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_scope_resilience_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_scope use (immersed)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_scope use (immersed)" value="/roll d20 + [[@{scope use (immersed)_total}]]" style="width:95%;font-size:.75em;">Scope Use (immersed)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_scope use (immersed)_total" value="[[@{scope use (immersed)_ranks}+@{int_mod}+@{scope use (immersed)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_scope_use_(immersed)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_scope_use_(immersed)" value="/roll d20 + [[@{scope_use_(immersed)_total}]]">Scope Use (immersed)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_scope_use_(immersed)_total" value="[[@{scope_use_(immersed)_ranks}+@{int_mod}+@{scope_use_(immersed)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_scope use (immersed)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_scope use (immersed)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_scope_use_(immersed)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_scope use (remote)_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_scope use (remote)" value="/roll d20 + [[@{scope use (remote)_total}]]" style="width:95%;font-size:.75em;">Scope Use (remote)</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_scope use (remote)_total" value="[[@{scope use (remote)_ranks}+@{int_mod}+@{scope use (remote)_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_scope_use_(remote)_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_scope_use_(remote)" value="/roll d20 + [[@{scope_use_(remote)_total}]]">Scope Use (remote)</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_scope_use_(remote)_total" value="[[@{scope_use_(remote)_ranks}+@{int_mod}+@{scope_use_(remote)_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_scope use (remote)_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_int_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_scope use (remote)_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_scope_use_(remote)_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_search_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_search" value="/roll d20 + [[@{search_total}]]" style="width:95%;font-size:.75em;">Search</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_search" value="/roll d20 + [[@{search_total}]]">Search</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_search_total" value="[[@{search_ranks}+@{int_mod}+@{search_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_search_ranks" min="0"/></span>
@@ -546,30 +545,30 @@ Influence Points at 1st level
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_search_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_sense motive_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_sense motive" value="/roll d20 + [[@{sense motive_total}]]" style="width:95%;font-size:.75em;">Sense Motive</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_sense motive_total" value="[[@{sense motive_ranks}+@{wis_mod}+@{sense motive_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_sense_motive_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_sense_motive" value="/roll d20 + [[@{sense_motive_total}]]">Sense Motive</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_sense_motive_total" value="[[@{sense_motive_ranks}+@{wis_mod}+@{sense_motive_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_sense motive_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_wis_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_sense motive_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_sense_motive_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
-	<span class="sheet-table-cell"><input type="checkbox" name="attr_sleight of hand_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_sleight of hand" value="/roll d20 + [[@{sleight of hand_total}]]" style="width:95%;font-size:.75em;">Sleight of Hand</button></span>
-	<span class="sheet-table-cell"><input type="number" name="attr_sleight of hand_total" value="[[@{sleight of hand_ranks}+@{dex_mod}+@{sleight of hand_misc}]]" disabled="disabled"/></span>
+	<span class="sheet-table-cell"><input type="checkbox" name="attr_sleight_of_hand_cs"/></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_sleight_of_hand" value="/roll d20 + [[@{sleight_of_hand_total}]]">Sleight of Hand</button></span>
+	<span class="sheet-table-cell"><input type="number" name="attr_sleight_of_hand_total" value="[[@{sleight_of_hand_ranks}+@{dex_mod}+@{sleight_of_hand_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_sleight of hand_ranks" min="0"/></span>
 	<span class="sheet-table-cell">+</span>
 	<span class="sheet-table-cell"><input type="number"  value="-1" name="attr_dex_mod"/></span>
 	<span class="sheet-table-cell">+</span>
-	<span class="sheet-table-cell"><input type="number" value="0" name="attr_sleight of hand_misc"/></span>
+	<span class="sheet-table-cell"><input type="number" value="0" name="attr_sleight_of_hand_misc"/></span>
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_spot_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_spot" value="/roll d20 + [[@{spot_total}]]" style="width:95%;font-size:.75em;">Spot</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_spot" value="/roll d20 + [[@{spot_total}]]">Spot</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_spot_total" value="[[@{spot_ranks}+@{wis_mod}+@{spot_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_spot_ranks" min="0"/></span>
@@ -580,7 +579,7 @@ Influence Points at 1st level
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_survival_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_survival" value="/roll d20 + [[@{survival_total}]]" style="width:95%;font-size:.75em;">Survival</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_survival" value="/roll d20 + [[@{survival_total}]]">Survival</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_survival_total" value="[[@{survival_ranks}+@{wis_mod}+@{survival_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_survival_ranks" min="0"/></span>
@@ -591,7 +590,7 @@ Influence Points at 1st level
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_swim_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_swim" value="/roll d20 + [[@{swim_total}]]" style="width:95%;font-size:.75em;">Swim</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_swim" value="/roll d20 + [[@{swim_total}]]">Swim</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_swim_total" value="[[@{swim_ranks}+@{str_mod}+@{swim_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_swim_ranks" min="0"/></span>
@@ -602,7 +601,7 @@ Influence Points at 1st level
 </div>	
 <div class="sheet-table-row">	
 	<span class="sheet-table-cell"><input type="checkbox" name="attr_tumble_cs"/></span>
-	<span class="sheet-table-cell"><button type="roll" name="roll_tumble" value="/roll d20 + [[@{tumble_total}]]" style="width:95%;font-size:.75em;">Tumble</button></span>
+	<span class="sheet-table-cell"><button type="roll" name="roll_tumble" value="/roll d20 + [[@{tumble_total}]]">Tumble</button></span>
 	<span class="sheet-table-cell"><input type="number" name="attr_tumble_total" value="[[@{tumble_ranks}+@{dex_mod}+@{tumble_misc}]]" disabled="disabled"/></span>
 	<span class="sheet-table-cell">=</span>
 	<span class="sheet-table-cell"><input type="number" value="0" name="attr_tumble_ranks" min="0"/></span>
@@ -615,11 +614,18 @@ Influence Points at 1st level
 		</div>
 		
 	</div>	
-	<div class="sheet-col" style="width:50%;"><div>
+	<div class="sheet-col" style="width:38%;"><div>
 			<h2>Excellence</h2>
 			<span class="sheet-input-with-label" style="vertical-align:top;"><input type="number" name="attr_excellent_pts"/><h5>Points</h5></span>
 			<span class="sheet-input-with-label" style="vertical-align:top;"><input type="number" name="attr_excellent_pts_unspent"/><h5>Unspent</h5></span>	
 		</div>	
+		<div>
+				<h2>Hit Points</h2>
+				<span class="sheet-input-with-label"><input type="number" name="attr_hit_points_max"/><h5>Max</h5></span>
+				<span class="sheet-input-with-label"><input type="number" name="attr_hit_points_threshold"/><h5>Threshold</h5></span>
+				<span class="sheet-input-with-label"><textarea name="attr_damage_taken" style="height:36px;">Damage taken: </textarea></span>
+
+		</div>
 		<h2>Abilities</h2>
 		<div class="sheet-table">
 			<div class="sheet-table-row">	
@@ -765,13 +771,6 @@ Influence Points at 1st level
 		</div>
 		
 
-		<div>
-				<h2>Hit Points</h2>
-				<span class="sheet-input-with-label"><input type="number" name="attr_hit_points_max"/><h5>Max</h5></span>
-				<span class="sheet-input-with-label"><input type="number" name="attr_hit_points_threshold"/><h5>Threshold</h5></span>
-				<span class="sheet-input-with-label"><textarea name="attr_damage_taken" style="height:36px;">Damage taken: </textarea></span>
-
-		</div>
 		<div class="sheet-table">
 			<div class="sheet-table-row">
 				<span class="sheet-table-cell"><h2>Attack</h2></span>
